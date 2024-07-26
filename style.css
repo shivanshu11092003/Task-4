@@ -3,44 +3,220 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+    background-color: white;
+    
 }
 
 .box{
+    margin: auto;
+    align-items: center;
     height: 100%;
     width: 100vw;
 }
 .addImage{
-    border: 1px solid red;
+    border: 1px solid rgb(255, 255, 255);
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: auto;
-    background-color: antiquewhite;
-    height: 8em;
+    height: 17em;
+    background-color: white;
+}
+.nav{
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    width: 15em;
+}
+.option{
+    padding-right: 3rem;
+    width: 40em;
+    display: flex;
+    justify-content: space-between;
+}
+.div{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.div:hover{
+    text-decoration: underline;
+
 }
 .addImage .logotxt{
-    font-size: 2rem;
+    background-color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 .input{
-    height: 3em;
+    font-size: 1rem ;
+    box-shadow: -1.5px 5.5px 5.5px 3.5px #dddddd;
+    height: 4em;
+    border: 0;
+    outline: 0;
     width: 40em;
-    border-radius: 10px;
+    border-radius: 5px;
+}
+.input:hover{
+    transform: scale(1.1);
+
+}
+.input::placeholder{
+    font-size: 1.2rem;
 }
 .btn{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 10px;
-
-    height: 3em;
+    height: 3.4em;
     width: 11em;
     background-color: transparent;
+    font-size: 1rem;
+    background-color: black;
+    color: whitesmoke;
+}
+.btn:hover {
+    transform: scale(1.1);
 }
 .Images{
     width: 100%;
     height: 100%;
-    background-color: rgb(172, 172, 172);
+    background-color:white;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: wrap;  
 
+}
+.background{
+    margin-top: 17rem;
+    height: 20em;
+    background-repeat: no-repeat;
+
+}
+.eachImagecard{
+    height: 28em;
+    width: 35em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.imgelement{    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: 24em;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+}
+.imgelement:hover{
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+} */
+.delbtn{
+    align-self: flex-end;
+    border-radius: 10px;
+    height: 3em;
+    width: 3em;
+    border: 0;
+}
+.delbtn img{
+    padding: auto;
+    margin: auto;
+    height: 1.8em;
+    width: 2em;
+}
+
+
+.editbtn{
+    background-color: transparent;
+    align-self: flex-start;
+    border-radius: 10px;
+    height: 3em;
+    width: 3em;
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    bottom: 2.4em;
+}
+.editbtn img{
+    padding: auto;
+    height: 1.8em;
+    width: 2em;
+}
+
+.custom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.last{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:645px) {
+    .div{
+       font-size: 1rem;
+    }
+    .eachImagecard{
+        height: 23em;
+        width: 30em;
+    }
+    .input{
+        width: 30em;
+
+    }
+    
+}
+
+@media (max-width:495px) {
+    .eachImagecard{
+        height: 19em;
+        width: 25em;
+    }
+    .option{
+        display: none;
+    }
+    .input{
+        width: 26em;
+
+    }
+    
+
+    
+}
+@media (max-width:402px) {
+    .option{
+        display: none;
+    }
+    .input{
+        width: 24em;
+
+    }
+    .btn{
+        margin-top: 2rem;
+    }
+    
+
+    
 }
 
