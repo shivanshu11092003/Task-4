@@ -9,6 +9,7 @@ let keyValueItr = array.keys();
 const background = document.getElementById("background")
 
 
+
 submit.addEventListener("click", function () {
 
     if (imgurl.value.trim() == "") {
@@ -44,15 +45,15 @@ submit.addEventListener("click", function () {
                         delbtn.classList.add("delbtn")
                         editbtn.classList.add("editbtn")
                         array.push(imgurl.value);
-                        let obj = Object.assign({}, array);
-                        let json = JSON.stringify(obj);
+                        // let obj = Object.assign({}, array);
+                        // let json = JSON.stringify(obj);
                         let x = keyValueItr.next().value;
-                        console.log(x);
+
                         card.id = "card"
                         delbtn.id = `delbtn${x}`
                         editbtn.id = `editbtn${x}`
-                        console.log(obj);
-                        localStorage.setItem("URL", json);
+                        // console.log(obj);
+                        localStorage.setItem("URL", array);
                         imgurl.value = ""
                         delbtn.setAttribute("onclick", "delitem(this.id)");
                         editbtn.setAttribute("onclick", "edititem(this.id)");
@@ -89,11 +90,9 @@ function delitem(id) {
     const index = array.indexOf(element.parentNode.children[0].src);
     array.splice(index, 1);
     console.log(array)
-    let obj = Object.assign({}, array);
-    let json = JSON.stringify(obj);
-    localStorage.setItem("URL", json);
-
-
+    // let obj = Object.assign({}, array);
+    // let json = JSON.stringify(obj);
+    localStorage.setItem("URL", array);
 
     // for (let i = 0; i < onClickdelbtn.length; i++) {
     //     onClickdelbtn[i].addEventListener("click", e => {
@@ -130,11 +129,11 @@ function edititem(id) {
                         const element = document.getElementById(id)
                         console.log(element)
                         const index = array.indexOf(element.parentNode.children[0].src);
-                        
+
                         array.splice(index, 1, newurl);
-                        let obj = Object.assign({}, array);
-                        let json = JSON.stringify(obj);
-                        localStorage.setItem("URL", json);
+                        // let obj = Object.assign({}, array);
+                        // let json = JSON.stringify(obj);
+                        localStorage.setItem("URL", array);
                         element.parentNode.children[0].src = newurl;
                     }
                     else {
@@ -155,11 +154,11 @@ function edititem(id) {
             })
 
     }
-    
-    
 
 
-    
+
+
+
 
 
     // for (let button of onClickdeledit) {
@@ -180,16 +179,57 @@ function edititem(id) {
     //     });
     // }
 }
+console.log(array.length)
 
 
 
+let x = localStorage.getItem("URL")
+x = x.split(",")
+console.log(x.length);
+console.log(x);
+
+function onReload() {
+    x.  forEach((element, x) => {
+        background.remove();
+        error.innerHTML = ""
+        const card = document.createElement("div");
+        const delbtn = document.createElement("button");
+        const editbtn = document.createElement("button");
+        const imgelement = document.createElement("img");
+        const btnimg = "https://cdn-icons-png.flaticon.com/512/6861/6861362.png"
+        const editbtnimg = "https://cdn-icons-png.flaticon.com/512/4211/4211584.png"
+        delbtn.innerHTML = `<img src=${btnimg}>`;
+        editbtn.innerHTML = `<img src=${editbtnimg}>`;
+        card.classList.add("eachImagecard")
+        card.appendChild(imgelement);
+        card.appendChild(delbtn);
+        card.appendChild(editbtn);
+        image.appendChild(card);
+        imgelement.src = element;
+        imgelement.classList.add("imgelement")
+        delbtn.classList.add("delbtn")
+        editbtn.classList.add("editbtn")
+        array.push(imgurl.value);
+        // let obj = Object.assign({}, array);
+        // let json = JSON.stringify(obj);
+        // let x = keyValueItr.next().value;
+
+        card.id = "card"
+        delbtn.id = `delbtn${x}`
+        editbtn.id = `editbtn${x}`
+        // console.log(obj);
+        // localStorage.setItem("URL", array);
+        imgurl.value = ""
+        delbtn.setAttribute("onclick", "delitem(this.id)");
+        editbtn.setAttribute("onclick", "edititem(this.id)");
 
 
+    });
+
+}
 
 
-
-
-
+onReload();
 
 
 
