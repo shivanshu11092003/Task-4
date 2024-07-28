@@ -190,6 +190,7 @@ console.log(x);
 
 function onReload() {
     x.forEach((element, x) => {
+        if(element[0].trim() !=''){
         background.remove();
         error.innerHTML = ""
         const card = document.createElement("div");
@@ -222,11 +223,13 @@ function onReload() {
         imgurl.value = ""
         delbtn.setAttribute("onclick", "delitem(this.id)");
         editbtn.setAttribute("onclick", "edititem(this.id)");
+    }
 
 
     });
+    }
 
-}
+
 
 
 onReload();
