@@ -62,7 +62,7 @@ submit.addEventListener("click", function () {
 
                     }
                     else {
-                        error.innerHTML = "*Put Valid URL"
+                        error.innerHTML = "URL not contain any picture"
                     }
 
                 }
@@ -74,7 +74,7 @@ submit.addEventListener("click", function () {
             }
         })
             .catch((e) => {
-                error.innerHTML = "*Put Valid URL"
+                error.innerHTML = "*Picture In URL is PAID"
                 console.log(e);
             })
 
@@ -149,7 +149,7 @@ function edititem(id) {
             }
         })
             .catch((e) => {
-                error.innerHTML = "*Put Valid URL"
+                error.innerHTML = "*Picture In URL is PAID"
                 console.log(e);
             })
 
@@ -189,7 +189,7 @@ console.log(x.length);
 console.log(x);
 
 function onReload() {
-    x.  forEach((element, x) => {
+    x.forEach((element, x) => {
         background.remove();
         error.innerHTML = ""
         const card = document.createElement("div");
