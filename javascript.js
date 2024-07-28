@@ -6,10 +6,9 @@ const error = document.getElementById("error");
 error.style.color = "red"
 let array = [];
 let keyValueItr = array.keys();
-
-
-
 const background = document.getElementById("background")
+
+
 submit.addEventListener("click", function () {
 
     if (imgurl.value.trim() == "") {
